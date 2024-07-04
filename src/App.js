@@ -12,14 +12,13 @@ function App() {
     setError("");
     setArticles([]);
     try {
-      const response = await fetch("http://localhost:3001/scrape", {
+      const response = await fetch("https://procuzy-backend-node.onrender.com/scrape", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ topic })
       });
 
       const result = await response.json();
-    
 
       if (response.ok) {
         setArticles(result);
@@ -40,10 +39,9 @@ function App() {
         value={topic}
         onChange={e => setTopic(e.target.value)}
         placeholder="Enter a topic"
-        onKeyDown={(e) => {
-          if (e.key === "Enter")
-              scrapeArticles();
-          }}
+        onKeyDown={e => {
+          if (e.key === "Enter") scrapeArticles();
+        }}
       />
       <button onClick={scrapeArticles} disabled={loading}>
         {loading ? "Scraping..." : "Scrape Articles"}
@@ -56,12 +54,15 @@ function App() {
         <article className="all-browsers">
           <h1>Most Popular Articles</h1>
           {articles.map((article, index) =>
-            <article className="browser"  key={index}>
+            <article className="browser" key={index}>
               <h2>
                 {article.author}
               </h2>
               <p>
-                {article.title}{" "}<a href={article.link} target="_blank">Click here...</a>
+                {article.title}{" "}
+                <a href={article.link} target="_blank">
+                  Click here...
+                </a>
               </p>
               <p>
                 {article.date}
