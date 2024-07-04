@@ -65,17 +65,6 @@ function App() {
             </article>
           )}
         </article>}
-      {/* <ul>
-        {articles.map((article, index) => (
-          <li key={index}>
-            <a href={article.link} target="_blank" rel="noopener noreferrer">
-              {article.title}
-            </a>{' '}
-            by {article.author}
-            posted on <i>{article.date}</i>
-          </li>
-        ))}
-      </ul> */}
     </div>
   );
 }
