@@ -14,14 +14,6 @@ button {
   font-size: 16px;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  margin: 10px 0;
-}
 
 a {
   text-decoration: none;
@@ -30,4 +22,24 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+.all-browsers {
+  margin: 0;
+  margin-top: 2rem;
+  padding: 5px;
+  background-color: lightgray;
+}
+
+.all-browsers > h1, .browser {
+  margin: 10px;
+  padding: 5px;
+}
+
+.browser {
+  background: white;
+}
+
+.browser > h2, p {
+  margin: 4px;
+  font-size: 90%;
 }
