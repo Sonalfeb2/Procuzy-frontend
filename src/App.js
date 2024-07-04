@@ -40,6 +40,10 @@ function App() {
         value={topic}
         onChange={e => setTopic(e.target.value)}
         placeholder="Enter a topic"
+        onKeyDown={(e) => {
+          if (e.key === "Enter")
+              scrapeArticles();
+          }}
       />
       <button onClick={scrapeArticles} disabled={loading}>
         {loading ? "Scraping..." : "Scrape Articles"}
